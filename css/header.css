@@ -1,0 +1,127 @@
+body {
+    border: 1px solid #20222A;;
+    background-color: #fbfbfb;
+}
+.top {
+    padding: 0;
+    margin: 0;
+    height: 4rem;
+    line-height: 4rem;
+    background-color: #202229;
+    color: #fff;
+    font-size: 1.8rem;
+}
+.top span {
+    display: inline-block;
+}
+.top a {
+    color: #fff;
+}
+.top .container {
+    margin-top: 0;
+}
+.top form {
+    height: 100%;
+    color:#333;
+}
+.top form input{
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding:.7rem 1rem;
+    height: 100%;
+    width: 20rem;
+    text-align: left;
+    font-size: 1.3rem;
+    border:none;
+    margin-top: .5rem;
+}
+.top form button{
+    margin-left: 1rem;
+    padding:.3rem 1rem;
+}
+.container {
+    margin-top: 3rem;
+}
+/*表单*/
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus{
+    outline:none;
+}
+/*导航条*/
+.box_nav .nav li{
+    width: 100px;
+    margin-left:0;
+}
+
+.box_nav .nav li a{
+    background-color: #ccc;
+    overflow: hidden;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #aaa;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #20222A;
+    font-size: 1.6rem;
+}
+a {
+    color: #333;
+}
+
+.img-center {
+    height: 20rem;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/tab.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.line {
+    width: 120rem;
+    border-top: 1px solid #ccc;
+    margin: 10px auto;
+}
+
+/*swiper框架*/
+.swiper-button-prev,.swiper-button-next{
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    opacity: 0.8;
+}
+.swiper-button-prev{
+    background-image:url("../icon/black_left.png");
+    background-size: 100% 100%;
+    left:0;
+}
+.swiper-button-next{
+    background-image: url("../icon/black_right.png");
+    right: 0px;
+    background-size: 100% 100%;
+}
+.swiper-wrapper a{
+}
+.swiper-button-prev:hover,.swiper-button-next:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

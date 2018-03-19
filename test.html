@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public_css/bootstrap.min.css">
+    <script src="public_js/jquery.js"></script>
+    <script src="public_js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height: 2rem;
+        border:1px solid #000;
+    }
+    li{
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: #f05a00;
+        margin: 10px;
+        transition:all .2s linear;
+        color:#fff;
+        line-height: 200px;
+        text-align: center;
+
+    }
+    li:hover{
+        transform:translate3d(0px, -3px, 0px);
+        box-shadow: 0 8px 15px 2px rgba(0,0,0,0.15);
+    }
+    #return_top a{
+        width: 50px;
+        height: 50px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #2E2D3C;
+        position:fixed;
+        right: 200px;
+        bottom: 200px;
+        color:#fff;
+        font-size: 30px;
+        text-decoration: none;
+    }
+</style>
+<body style="background-color: #fff;height: 10000px">
+    <ul class="row">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li class="visible-lg-block">11</li>
+    </ul>
+    <div id="return_top">
+        <a href="javaScript:;"> &uarr;&uarr;</a>
+    </div>
+</body>
+</html>
+<script>
+    window.addEventListener('scroll', function () {
+        var oTop = document.getElementById('return_top');
+        var oW = document.documentElement.clientWidth;
+        if (oW<970){
+            oTop.style.display='none';
+        }else {
+            var oH = document.documentElement.clientHeight;
+            var oS = document.documentElement.scrollTop;
+            if (oH + oS > oH+100) {
+                oTop.style.display = "block";
+            } else {
+                oTop.style.display = "none";
+            }
+            oTop.onclick = function () {
+                var timer = null;
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    console.log(oS);
+                    document.documentElement.scrollTop = (oS *= .5);
+                    if (oS <= 50) {
+                        oS = 0;
+                        clearInterval(timer);
+                        oTop.style.display = "none";
+                    }
+                    console.log(oS)
+                }, 30)
+            };
+        };
+    });
+</script>

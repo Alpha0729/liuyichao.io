@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+            margin: 200px auto;
+            /*-webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;*/
+            transform: rotateX(0deg);
+            z-index: 999;
+        }
+
+        /*#div:hover{
+            !*transform: translate3d(0px ,0px ,30px);*!
+            transform: rotateX(40deg);
+
+        }*/
+        #box {
+            height: 200px;
+            border-left: 1px solid #000;
+            position: absolute;
+            left: 760px;
+            top: 100px;
+        }
+        ul {
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            margin: 240px auto;
+            position: relative;
+            transition: all 0.1s;
+            transform-style: preserve-3d;
+            transform: translateX(41px) rotateY(32deg);
+        }
+
+        li {
+            background-color: #ccc;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            text-align: center;
+            line-height: 150px;
+            font-size: 40px;
+            color: #fff;
+        }
+        li:nth-child(1){
+            transform: rotateX(0deg) translateZ(100px);
+            background-color: orange;
+        }
+        li:nth-child(2){
+            transform: rotateX(90deg) translateZ(-100px);
+            background-color: rebeccapurple;
+        }
+        li:nth-child(3){
+            transform: rotateX(0deg) translateZ(-100px);
+            background-color: yellow;
+        }
+        li:nth-child(4){
+            transform: rotateX(-90deg) translateZ(-100px);
+            background-color: green;
+        }
+        li:nth-child(5){
+            transform: rotateY(90deg) translateZ(-100px);
+            background-color: red;
+        }
+        li:nth-child(6){
+            transform: rotateY(-90deg) translateZ(-100px);
+            background-color: purple;
+        }
+    </style>
+</head>
+<body style="height: 10000px;">
+<div id="div">我是一段长长的文字！</div>
+<div id="box"></div>
+<ul  id="box2">
+    <li style=""></li>
+    <li style="background-color: #2b542c"></li>
+    <li style=""></li>
+    <li style="background-color: #1E9FFF"></li>
+    <li style=""></li>
+    <li style=""></li>
+</ul>
+</body>
+</html>
+<script>
+    var oDiv = document.getElementById('div');
+    var oBox = document.getElementById('box');
+    var oBox2 = document.getElementById('box2');
+    document.addEventListener('mousedown', function (ev) {
+        var oEvent = ev || event;
+        var oX = oEvent.clientX;
+        var oY = oEvent.clientY;
+
+        function move(ev) {
+            console.log('横轴为：' + oX + '，纵轴为：' + oY);
+            var oEvent = ev || event;
+            var oX2 = oEvent.clientX;
+            var oY2 = oEvent.clientY;
+            var all = oY2 - oY;
+            var all2 = oX2 - oX;
+           /* oDiv.style.transform = 'rotateX(' + all + 'deg)';
+            oBox.style.transform = 'rotateX(' + all + 'deg)';*/
+
+            oBox2.style.transform = "rotateX("+ -all + "deg) rotateY("+ all2 + "deg)";
+            //oBox2.style.transform = '';
+        };
+        console.log(oDiv.style.transform);
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', function () {
+            document.removeEventListener('mousemove', move)
+        });
+        return false;
+    });
+
+</script>
+<script>
+    var str = 'rotateX(-66deg)';
+</script>

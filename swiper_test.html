@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="public_css/bootstrap.min.css">
+    <link rel="stylesheet" href="public_css/swiper-4.1.6.min.css">
+    <script src="public_js/jquery.js"></script>
+    <style>
+        .swiper-container{
+            width: 1200px;
+            height:40px;
+            margin-top: 100px;
+            background-color: #eee;
+        }
+        .swiper-wrapper{
+            }
+        ul{
+            margin: 0;
+
+        }
+        li.swiper-slide{
+            list-style:none ;
+            background-color: #ccc;;
+        }
+        .nav-pills>li+li{
+            margin:0;
+        }
+        .swiper-button-next, .swiper-button-prev{
+            color:#fff;
+        }
+        .swiper-button-prev,.swiper-button-next{
+            background-size: 100%;
+            margin-top:-20px;
+            height: 100%;
+            width: 40px;
+        }
+        .swiper-button-prev{
+            background-image:url("icon/black_left.png");
+            left:0
+        }
+        .swiper-button-next{
+            background-image: url("icon/black_right.png");
+            right: 0px;
+        }
+        .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+            background-color: #20222A;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container box_nav swiper-container">
+    <ul class="nav nav-pills nav-justified swiper-wrapper">
+        <li class="active swiper-slide"><a href="javaScript:;">首页</a></li>
+        <li class="swiper-slide"><a href="">CSS</a></li>
+        <li class="swiper-slide"><a href="">JavaScript</a></li>
+        <li class="swiper-slide"><a href="">PHP</a></li>
+        <li class="swiper-slide"><a href="">ThinkPHP</a></li>
+        <li class="swiper-slide"><a href="">杂乱不堪</a></li>
+        <li class="active swiper-slide"><a href="">HTML</a></li>
+        <li class="swiper-slide"><a href="">CSS</a></li>
+        <li class="swiper-slide"><a href="">JavaScript</a></li>
+        <li class="swiper-slide"><a href="">PHP</a></li>
+        <li class="swiper-slide"><a href="">ThinkPHP</a></li>
+        <li class="swiper-slide"><a href="">杂乱不堪</a></li>
+        <li class="active swiper-slide"><a href="">HTML</a></li>
+        <li class="swiper-slide"><a href="">CSS</a></li>
+        <li class="swiper-slide"><a href="">JavaScript</a></li>
+        <li class="swiper-slide"><a href="">PHP</a></li>
+        <li class="swiper-slide"><a href="">ThinkPHP</a></li>
+        <li class="swiper-slide"><a href="">杂乱不堪</a></li>
+        <li class="active swiper-slide"><a href="">HTML</a></li>
+        <li class="swiper-slide"><a href="">CSS</a></li>
+        <li class="swiper-slide"><a href="">JavaScript</a></li>
+        <li class="swiper-slide"><a href="">PHP</a></li>
+        <li class="swiper-slide"><a href="">ThinkPHP</a></li>
+        <li class="swiper-slide"><a href="javaScript:;">敬请期待！</a></li>
+    </ul>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+<script type="text/javascript" src="public_js/swiper-4.1.6.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper ('.swiper-container', {
+        slidesPerView: 8,
+        speed:300,
+        spaceBetween: 30,//轮播侧边距离  margin-left
+        freeMode: false  //  true 自由滑动   false只能滑动一个
+        ,grabCursor:true, //小手
+        freeModeSticky : true,//自动贴边
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+</script>
+</body>
+</html>
